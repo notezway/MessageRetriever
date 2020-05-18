@@ -38,4 +38,9 @@ class MessageAdapter extends RecyclerView.Adapter<MessageViewHolder> {
     public int getItemCount() {
         return messages.size();
     }
+
+    void removeItem(int position) {
+        messages.remove(position);
+        notifyItemRemoved(position);
+    }
 }
