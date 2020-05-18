@@ -3,7 +3,7 @@ Simple android application for educational purposes.
 
 Приложение читает файлы из https://messageretriver.ntzw.ru/endpoint/{PAGE}.json, где {PAGE} - номер страницы.
 Каждая страница содержит список сообщений и имеет следующую структуру:
-
+```JSON
 [
   {
     "id": "7e3122f9-6d50-44bc-b217-44eb7ec5f4ae",
@@ -17,7 +17,7 @@ Simple android application for educational purposes.
   },
 …
 ]
-
+```
 Каждая страница содержит от 0 до 50 сообщений включительно.
 Приложение читает из страниц сообщения и показывает их пользователю.
 Список сообщений отсортирован по полю "time" (сначала новые).
