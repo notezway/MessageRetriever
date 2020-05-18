@@ -1,7 +1,7 @@
 # MessageRetriever
 Simple android application for educational purposes.
 
-Приложение читает файлы из https://messageretriver.ntzw.ru/endpoint/{PAGE}.json, где {PAGE} - номер страницы.
+Приложение читает файлы из http://messageretriver.ntzw.ru/endpoint/{PAGE}.json, где {PAGE} - номер страницы.
 Каждая страница содержит список сообщений и имеет следующую структуру:
 ```JSON
 [
