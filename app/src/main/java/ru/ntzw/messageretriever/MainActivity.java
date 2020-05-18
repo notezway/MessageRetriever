@@ -1,7 +1,8 @@
 package ru.ntzw.messageretriever;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -22,16 +23,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         recyclerView = findViewById(R.id.rv_messages_list);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         Random random = new Random();
         int capacity = 128;
-        List<Message> messages = new ArrayList<>(capacity);
+        final List<Message> messages = new ArrayList<>(capacity);
         for(int i = 0; i < capacity; i++) {
             messages.add(randomMessage(random));
         }
-        MessageAdapter adapter = new MessageAdapter(this, messages);
+        final MessageAdapter adapter = new MessageAdapter(this, messages);
         recyclerView.setAdapter(adapter);
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new SimpleItemSwipeRemover(adapter));
+        itemTouchHelper.attachToRecyclerView(recyclerView);
     }
 
     private static Message randomMessage(Random random) {
