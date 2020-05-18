@@ -1,29 +1,28 @@
 package ru.ntzw.messageretriever;
 
-import java.time.LocalDateTime;
 import java.util.UUID;
 
-public class Message {
+class Message {
 
     private final UUID id;
-    private final LocalDateTime time;
+    private final long time;
     private final String text;
 
-    public Message(UUID id, LocalDateTime time, String text) {
+    Message(UUID id, long time, String text) {
         this.id = id;
         this.time = time;
         this.text = text;
     }
 
-    public UUID getId() {
+    UUID getId() {
         return id;
     }
 
-    public LocalDateTime getTime() {
+    long getTime() {
         return time;
     }
 
-    public String getText() {
+    String getText() {
         return text;
     }
 }
