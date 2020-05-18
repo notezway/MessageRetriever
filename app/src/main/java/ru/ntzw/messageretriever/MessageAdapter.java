@@ -8,12 +8,15 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.List;
 
 class MessageAdapter extends RecyclerView.Adapter<MessageViewHolder> {
 
     private final LayoutInflater inflater;
     private final List<Message> messages;
+    private final DateFormat dateFormat = DateFormat.getDateTimeInstance();
 
     MessageAdapter(Context context, List<Message> messages) {
         this.inflater = LayoutInflater.from(context);
@@ -30,8 +33,8 @@ class MessageAdapter extends RecyclerView.Adapter<MessageViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MessageViewHolder holder, int position) {
         Message message = messages.get(position);
-        holder.getTimeView().setText("Time: " + message.getTime());
-        holder.getTextView().setText("Text: " + message.getText());
+        holder.getTimeView().setText(dateFormat.format(new Date(message.getTime())));
+        holder.getTextView().setText(message.getText());
     }
 
     @Override
