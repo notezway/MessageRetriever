@@ -64,7 +64,6 @@ class MessageAdapter extends RecyclerView.Adapter<MessageViewHolder> {
             synchronized (messageProvider) {
                 this.dataSetSizeBefore = messageProvider.size();
                 int index = integers[0];
-                System.out.println("Trying get message with index " + index);
                 return messageProvider.get(index);
             }
         }
@@ -73,6 +72,7 @@ class MessageAdapter extends RecyclerView.Adapter<MessageViewHolder> {
         protected void onPostExecute(Message message) {
             super.onPostExecute(message);
             synchronized (messageAdapter) {
+                holder.getIdView().setText(message.getId().toString());
                 holder.getTimeView().setText(dateFormat.format(new Date(message.getTime())));
                 holder.getTextView().setText(message.getText());
                 synchronized (messageProvider) {
