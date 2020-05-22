@@ -9,9 +9,7 @@
         android:id="@+id/rv_messages_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp">
+        android:scrollbars="vertical">
     </androidx.recyclerview.widget.RecyclerView>
 
 </FrameLayout>
