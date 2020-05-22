@@ -6,12 +6,20 @@
     android:padding="8dp">
 
     <TextView
+        android:id="@+id/tv_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|start"
+        android:fontFamily="monospace"
+        style="@style/TextAppearance.AppCompat.Caption"/>
+
+    <TextView
         android:id="@+id/tv_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|start"
         android:fontFamily="monospace"
-        style="@style/TextAppearance.AppCompat.Title"/>
+        style="@style/TextAppearance.AppCompat.Medium"/>
 
     <TextView
         android:id="@+id/tv_text"
